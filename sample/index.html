@@ -5,7 +5,6 @@
 		<title>sample</title>
 		<link rel="stylesheet" href="http://docs.sencha.com/extjs/4.2.1/extjs-build/resources/ext-theme-neptune/ext-theme-neptune-all.css">
 		<script src="http://docs.sencha.com/extjs/4.2.1/extjs/ext-all.js"></script>
-		<script src="http://ace.c9.io/build/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 
 		<script type="text/javascript"> 
 			var QueryString = function () {
@@ -42,15 +41,26 @@
 
 			Ext.require([ 'Ext.form.*' ]);
 		</script>
+		
+		<style type="text/css" media="screen">
+		    #editor { 
+		            height: 275px;
+				    border: 1px solid #DDD;
+				    border-radius: 4px;
+				    border-bottom-right-radius: 0px;
+				    margin-top: 5px;
+		    }
+		</style>
 	</head>
 	<body style='height: 100%'>
 		
 		<div id='impl'>
 		</div>
-		<div id="editor" style="border:1px solid #88c;">
+		<div id='editor'>
 		</div>
 	
 	</body>
+	<script src="../lib/ace-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript"> 
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", QueryString.name + '.js',false);
@@ -60,10 +70,11 @@
 		eval(code);
 		
 		var editorId = 'editor';
-		document.getElementById(editorId).innerHTML=code;
 		
 		var editor = ace.edit(editorId);
-	    editor.setTheme("ace/theme/monokai");
-	    editor.getSession().setMode("ace/mode/javascript");
+		editor.container.style.opacity = "";
+		editor.setValue(code);
+		editor.setTheme("ace/theme/monokai");
+		editor.getSession().setMode("ace/mode/javascript");
    </script>
 </html>
