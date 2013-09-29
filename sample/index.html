@@ -44,7 +44,7 @@
 		
 		<style type="text/css" media="screen">
 		    #editor { 
-		            height: 275px;
+		            height: 500px;
 				    border: 1px solid #DDD;
 				    border-radius: 4px;
 				    border-bottom-right-radius: 0px;
@@ -72,9 +72,9 @@
 		var editorId = 'editor';
 		
 		var editor = ace.edit(editorId);
-		editor.container.style.opacity = "";
-		editor.setValue(code);
 		editor.setTheme("ace/theme/monokai");
 		editor.getSession().setMode("ace/mode/javascript");
+		editor.setValue(code);
+		
    </script>
 </html>
