@@ -5,10 +5,7 @@
 		<title>sample</title>
 		<link rel="stylesheet" href="http://docs.sencha.com/extjs/4.2.1/extjs-build/resources/ext-theme-neptune/ext-theme-neptune-all.css">
 		<script src="http://docs.sencha.com/extjs/4.2.1/extjs/ext-all.js"></script>
-
-		<script src="../jsLib/google-code-prettify/prettify.js"></script>
-		<link rel="stylesheet" href="../jsLib/google-code-prettify/sons-of-obsidian.css">
-
+		<script src="http://ace.c9.io/build/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 
 		<script type="text/javascript"> 
 			var QueryString = function () {
@@ -46,12 +43,12 @@
 			Ext.require([ 'Ext.form.*' ]);
 		</script>
 	</head>
-
 	<body style='height: 100%'>
 		
-		<div id='impl'></div>
-		<!--?prettify lang=c linenums=true?-->
-		<pre class="prettyprint" id="code" style="border:1px solid #88c;"></pre>
+		<div id='impl'>
+		</div>
+		<div id="editor" style="border:1px solid #88c;">
+		</div>
 	
 	</body>
 	<script type="text/javascript"> 
@@ -62,7 +59,11 @@
 		
 		eval(code);
 		
-		document.getElementById("code").innerHTML=code;
-		prettyPrint();
+		var editorId = 'editor';
+		document.getElementById(editorId).innerHTML=code;
+		
+		var editor = ace.edit(editorId);
+	    editor.setTheme("ace/theme/monokai");
+	    editor.getSession().setMode("ace/mode/javascript");
    </script>
 </html>
