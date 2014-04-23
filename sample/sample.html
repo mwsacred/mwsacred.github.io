@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<meta name="title" th:content="${item.text}" content="sample 명세" />
+
+<meta property="og:author" th:content="${item.nick}" content="샘플 sample" />
+<meta property="article:published_time" content="20140422122305" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="" />
+<meta property="og:regDate" content="20140422122305" />
+<meta property="og:description" th:content="${item.text}" content="sample 명세" />
+<meta property="og:site_name" content="리플즈" />
+<meta property="og:image" th:content="|http://mwsacred.babple.com:18080/replz.server/img?id=${item.id}|" content="http://i1.daumcdn.net/icon/opengraph/media.png" />
+<meta property="og:url" th:content="|http://mwsacred.babple.com:18080/replz.server/img?id=${item.id}|"
+  content="http://media.daum.net/issue/488/newsview?issueId=488&newsid=20140422122305044" />
+
+<meta name="svcdomain" content="mwsacred.babple.com:18080" />
+
+<title th:text="${item.text}">샘플 title</title>
+<style type="text/css">
+.layout {
+	width: 480px;
+	height: 800px;
+	margin: auto;
+	padding: 20px;
+	box-sizing: border-box;
+	background-color: #F2E04E;
+}
+
+.layout * {
+	box-sizing: border-box;
+}
+
+.splitter {
+	height: 40px;
+}
+
+.branch {
+	margin: auto;
+	width: 1em;
+	height: 100%;
+	background-color: #7ec4bf;
+}
+
+div.item {
+	position: relative;
+	clear: both;
+	width: 100%;
+	height: calc(50% - 20px);
+	width: 100%;
+}
+
+.item img.content {
+	display: block;
+	margin: auto;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.item .textLayer {
+	width: 100%;
+	height: 30%;
+	margin-top: auto;
+	background-color: #DB9779;
+	color: white;
+	padding: 5px;
+}
+
+.item .image {
+	height: 70%;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+</style>
+</head>
+<body>
+  <div class="layout">
+    <div th:if="${pitem != null}" class="item parent">
+      <div class="image" th:style="|background-image: url(/replz.server/img?id=${pitem.id});|"></div>
+      <div class="textLayer" th:text="${pitem.text}">테스트 텍스트</div>
+    </div>
+    <div th:unless="${pitem != null}" class="item parent"></div>
+
+    <div th:if="${pitem != null}" class="splitter">
+      <div class="branch"></div>
+    </div>
+    <div class="item child">
+      <div class="image" th:style="|background-image: url(/replz.server/img?id=${item.id});|"></div>
+      <div class="textLayer" th:text="${item.text}">테스트 텍스트</div>
+    </div>
+  </div>
+</body>
+</html>
