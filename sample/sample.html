@@ -1,25 +1,26 @@
+
 <!doctype html>
+
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="utf-8" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
 
-<meta name="title" th:content="${item.text}" content="sample 명세" />
+<meta content="&#39;여대생 공기총 살해&#39; 영남제분 회장, 항소심도 혐의부인" name="title" />
 
-<meta property="og:author" th:content="${item.nick}" content="샘플 sample" />
-<meta property="article:published_time" content="20140422122305" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="" />
-<meta property="og:regDate" content="20140422122305" />
-<meta property="og:description" th:content="${item.text}" content="sample 명세" />
-<meta property="og:site_name" content="리플즈" />
-<meta property="og:image" th:content="|http://mwsacred.babple.com:18080/replz.server/img?id=${item.id}|" content="http://i1.daumcdn.net/icon/opengraph/media.png" />
-<meta property="og:url" th:content="|http://mwsacred.babple.com:18080/replz.server/img?id=${item.id}|"
-  content="http://media.daum.net/issue/488/newsview?issueId=488&newsid=20140422122305044" />
+<meta content="박변태" property="og:author" />
+<meta content="20140422122305" property="article:published_time" />
+<meta content="article" property="og:type" />
+<meta content="&#39;여대생 공기총 살해&#39; 영남제분 회장, 항소심도 혐의부인" property="og:title" />
+<meta content="20140422122305" property="og:regDate" />
+<meta content="kjg" property="og:description" />
+<meta content="리플즈" property="og:site_name" />
+<meta content="http://mwsacred.babple.com:18080/replz.server/img?id=89" property="og:image" />
+<meta content="http://mwsacred.babple.com:18080/replz.server/img?id=89" property="og:url" />
 
-<meta name="svcdomain" content="mwsacred.babple.com:18080" />
+<meta content="mwsacred.babple.com:18080" name="svcdomain" />
 
-<title th:text="${item.text}">샘플 title</title>
+<title>kjg</title>
 <style type="text/css">
 .layout {
 	width: 480px;
@@ -79,22 +80,22 @@ div.item {
 	background-position: center;
 }
 </style>
-</head>
-<body>
-  <div class="layout">
-    <div th:if="${pitem != null}" class="item parent">
-      <div class="image" th:style="|background-image: url(/replz.server/img?id=${pitem.id});|"></div>
-      <div class="textLayer" th:text="${pitem.text}">테스트 텍스트</div>
-    </div>
-    <div th:unless="${pitem != null}" class="item parent"></div>
 
-    <div th:if="${pitem != null}" class="splitter">
+</head><body>
+  <div class="layout">
+    <div class="item parent">
+      <div class="image" style="background-image: url(http://mwsacred.babple.com:18080/replz.server/img?id=68);"></div>
+      <div class="textLayer">혀</div>
+    </div>
+    
+
+    <div class="splitter">
       <div class="branch"></div>
     </div>
     <div class="item child">
-      <div class="image" th:style="|background-image: url(/replz.server/img?id=${item.id});|"></div>
-      <div class="textLayer" th:text="${item.text}">테스트 텍스트</div>
+      <div class="image" style="background-image: url(http://mwsacred.babple.com:18080/replz.server/img?id=89);"></div>
+      <div class="textLayer">kjg</div>
     </div>
   </div>
-</body>
-</html>
+
+</body></html>
